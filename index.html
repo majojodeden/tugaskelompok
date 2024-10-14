@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaCup Motors</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* Header dengan warna merah */
+        header {
+            background: linear-gradient(135deg, #d32f2f 0%, #ff5252 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Konten Utama */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #d32f2f;
+            margin-bottom: 30px;
+        }
+
+        form fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px 15px;
+            vertical-align: top;
+            color: #555;
+        }
+
+        td:first-child {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+            border-color: #d32f2f;
+            outline: none;
+            box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        input[type="submit"] {
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #b71c1c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Styling Tabel Kendaraan */
+        .vehicle-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .vehicle-table th, .vehicle-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        .vehicle-table th {
+            background-color: #d32f2f;
+            color: white;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .vehicle-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Footer dengan Informasi Kontak */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #ff5252;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map */
+        .map-container {
+            margin: 30px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animasi dan Hover */
+        .container:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a {
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        /* Styling Responsif */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .container {
+                margin: 20px;
+            }
+
+            table, td {
+                display: block;
+                width: 100%;
+            }
+
+            td:first-child {
+                margin-top: 15px;
+                font-weight: normal;
+                color: #888;
+            }
+
+            input[type="submit"] {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner Merah -->
+    <header>
+        <h1>MaCup Motors</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Kontak</a></li>
+            <li><a href="#">Layanan</a></li>
+        </ul>
+    </nav>
+
+    <!-- Konten Utama -->
+    <div class="container">
+        <h2>Formulir Pendaftaran Kendaraan</h2>
+
+        <form action="Tabel.html">
+            <fieldset>
+                <table>
+                    <tr>
+                        <td><label for="jk">Jenis Kendaraan</label></td>    
+                        <td>
+                            <div class="radio-group">
+                                <input type="radio" name="jk" id="mobil" required>
+                                <label for="mobil">Mobil</label>
+
+                                <input type="radio" name="jk" id="motor">
+                                <label for="motor">Motor</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="merek">Merek Kendaraan</label></td>
+                        <td><input type="text" name="merek" id="merek" required autofocus></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="model">Model Kendaraan</label></td>
+                        <td><input type="text" name="model" id="model" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="tahun">Tahun Pembuatan</label></td>
+                        <td><input type="text" name="tahun" id="tahun" pattern="[0-9]{4}" required title="Masukkan tahun yang valid (4 digit)"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="np">Nomor Plat Kendaraan</label></td>
+                        <td><input type="text" name="np" id="np" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="warna">Warna Kendaraan</label></td>
+                        <td><input type="text" name="warna" id="warna" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="mesin">Kapasitas Mesin (cc)</label></td>
+                        <td><input type="text" name="mesin" id="mesin" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="bensin">Jenis Bahan Bakar</label></td>
+                        <td>
+                            <select name="bensin" id="bensin">
+                                <option value="pt">Pertalite</option>
+                                <option value="px">Pertamax</option>
+                                <option value="pxt">Pertamax Turbo</option>
+                                <option value="sl">Solar</option>
+                                <option value="dx">Dexlite</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="tp">Tanggal Pembelian</label></td>
+                        <td><input type="date" name="tp" id="tp" placeholder="date"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="kk">Kondisi Kendaraan</label></td>
+                        <td>
+                            <div class="radio-group">
+                                <input type="radio" name="kk" id="baru" required>
+                                <label for="baru">Baru</label>
+                                
+                                <input type="radio" name="kk" id="bekas">
+                                <label for="bekas">Bekas</label>
+
+                                <input type="radio" name="kk" id="pp">
+                                <label for="pp">Perlu Perbaikan</label>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="ct">Catatan Khusus</label></td>
+                        <td><textarea name="ct" id="ct"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" value="Simpan"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+
+        <!-- Tabel Kendaraan -->
+        <h2>Kendaraan Terdaftar</h2>
+        <table class="vehicle-table">
+            <thead>
+                <tr>
+                    <th>Jenis Kendaraan</th>
+                    <th>Merek</th>
+                    <th>Model</th>
+                    <th>Tahun</th>
+                    <th>Nomor Plat</th>
+                    <th>Warna</th>
+                    <th>Kapasitas Mesin</th>
+                    <th>Bahan Bakar</th>
+                    <th>Kondisi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mobil</td>
+                    <td>Toyota</td>
+                    <td>Avanza</td>
+                    <td>2019</td>
+                    <td>B 1234 XYZ</td>
+                    <td>Hitam</td>
+                    <td>1500cc</td>
+                    <td>Pertamax</td>
+                    <td>Baru</td>
+                </tr>
+                <!-- Baris ini bisa diisi dengan kendaraan lainnya -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 MaCup Motors. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+
+        <!-- Map Embed -->
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=honda%20dealership&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+    </footer>
+
+</body>
+</html>

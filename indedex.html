@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            max-width: 900px; /* Memperlebar konten form */
+            margin: 0 auto; /* Agar form berada di tengah layar */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .celebration-gif {
+            text-align: center;
+            margin-top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laporan Praktikum</h1>
+    
+    <form id="praktikumForm">
+        <ol>
+            <li>
+                <h3>Pertanyaan seputar tag</h3>
+                <ol type="a">
+                    <li>
+                        Apa yang dimaksud dengan tag pada html?
+                        <textarea name="jawaban1" rows="3" required></textarea>
+                    </li>
+                    <li>
+                        Apa itu pembuka dan penutup tag? Apakah hal tersebut terdapat pada semua jenis tag?
+                        <textarea name="jawaban2" rows="3" required></textarea>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3>Pertanyaan seputar element</h3>
+                <ol type="a">
+                    <li>
+                        Apa yang dimaksud dengan element?
+                        <textarea name="jawaban3" rows="3" required></textarea>
+                    </li>
+                    <li>
+                        Apa yang dimaksud dengan tagname, attribute dan content pada element?
+                        <textarea name="jawaban4" rows="3" required></textarea>
+                    </li>
+                    <li>
+                        Apakah elemen dapat ditumpuk? Apa yang terjadi bila demikian?
+                        <textarea name="jawaban5" rows="3" required></textarea>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3>Pertanyaan seputar anchor</h3>
+                <ol type="a">
+                    <li>
+                        Apa yang dimaksud dengan anchor?
+                        <textarea name="jawaban6" rows="3" required></textarea>
+                    </li>
+                    <li>
+                        Bagaimana caranya anchor dapat berfungsi, baik dari sisi pendefinisian ataupun pengaplikasiannya?
+                        <textarea name="jawaban7" rows="3" required></textarea>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3>Pertanyaan seputar multimedia</h3>
+                <table>
+                    <tr>
+                        <th>Jenis</th>
+                        <th>Pertanyaan</th>
+                    </tr>
+                    <tr>
+                        <td>A. Text</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    Sebutkan tag yang dapat digunakan untuk memanipulasi konten teks pada html, serta jelaskan fungsinya secara singkat!
+                                    <textarea name="jawaban8" rows="3" required></textarea>
+                                </li>
+                                <li>
+                                    Sebutkan tag yang dapat digunakan untuk memanipulasi struktur konten teks pada html!
+                                    <textarea name="jawaban9" rows="3" required></textarea>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B. Image</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    Apabila sebuah tag image tidak menampilkan gambar sebagaimana seharusnya, apa saja yang mungkin menyebabkan hal tersebut?
+                                    <textarea name="jawaban10" rows="3" required></textarea>
+                                </li>
+                                <li>
+                                    Apabila ternyata ada teks yang menggantikan gambar tersebut, apa yang sebenarnya terjadi?
+                                    <textarea name="jawaban11" rows="3" required></textarea>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C. Audio</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    Bagaimana caranya untuk kita dapat memasukkan audio source dari web (non-lokal)?
+                                    <textarea name="jawaban12" rows="3" required></textarea>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>D. Video</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    Apa yang biasanya terjadi apabila atribut autoplay pada tag video tidak berjalan? Apa yang anda harus lakukan sehingga atribut tersebut dapat berfungsi dengan semestinya?
+                                    <textarea name="jawaban13" rows="3" required></textarea>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ol>
+
+        <!-- Bagian Laporan Praktikum -->
+        <h2>Bagian Praktikum</h2>
+        <table>
+            <tr>
+                <td><label for="nama">Nama:</label></td>
+                <td><input type="text" id="nama" name="nama" required></td>
+            </tr>
+            <tr>
+                <td><label for="nim">NIM:</label></td>
+                <td><input type="text" id="nim" name="nim" required></td>
+            </tr>
+            <tr>
+                <td><label for="tanggal">Tanggal:</label></td>
+                <td><input type="date" id="tanggal" name="tanggal" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- GIF Celebration setelah soal dijawab -->
+    <div class="celebration-gif" id="celebrationGif">
+        <h2>Congratulations on completing the questions!</h2>
+        <img src="celebration.webp" alt="Celebration GIF" width="300" height="200">
+    </div>
+
+    <script>
+        document.getElementById('praktikumForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form langsung
+
+            // Tampilkan GIF
+            document.getElementById('celebrationGif').style.display = 'block';
+
+            // Tunggu beberapa detik sebelum mengirimkan formulir
+            setTimeout(() => {
+                // Submit form setelah 2 detik
+                event.target.submit();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
